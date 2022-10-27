@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+        <div class="row">
+            <h3 class="text-center"> Fare Details</h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Origin</label>
+                        <select class="form-control" name="origin" [(ngModel)]="selectedOrigin">
+                            <option value="" disabled>Choose a Origin</option>
+                            <option *ngFor="let dest of airportList" [ngValue]="dest">{{ dest.code }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Destination</label>
+                        <select class="form-control" name="destination" [(ngModel)]="selectedDestination">
+                            <option value="" disabled>Choose a Destination</option>
+                            <option *ngFor="let dest of airportList" [ngValue]="dest">{{ dest.code }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group" *ngIf= "fareDetails !== undefined">
+                        Amount: {{fareDetails.amount}}
+                        currency : {{fareDetails.currency}}
+                    </div>
+
+                    <br />
+                    <button class="btn btn-success" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
