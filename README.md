@@ -34,6 +34,8 @@ Node version - 14 and above
 
 Angular version - 12 and above.
 
+Install Npm in terminal use - npm install
+
 start the application use - ng serve
 
 Once application started successfully go to browser use http://localhost:4200/.
